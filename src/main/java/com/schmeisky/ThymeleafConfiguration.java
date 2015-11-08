@@ -14,19 +14,22 @@ public class ThymeleafConfiguration extends WebMvcConfigurerAdapter {
 
     @Bean
     public TemplateResolver templateResolver() {
-        final ServletContextTemplateResolver resolver = new ServletContextTemplateResolver();
-        resolver.setPrefix("/WEB-INF/");
+        final ServletContextTemplateResolver resolver = new ServletContextTemplateResolver();   
+        resolver.setPrefix("/WEB-INF/");     
         resolver.setSuffix(".html");
-        resolver.setTemplateMode("HTML5");
-        resolver.setOrder(1);
-        return resolver;
+        resolver.setTemplateMode("HTML5");      
+        resolver.setOrder(1);    
+        return resolver;       
+
+
+
     }
 
     @Bean
     public SpringTemplateEngine templateEngine() {
         final SpringTemplateEngine engine = new SpringTemplateEngine();
         engine.setTemplateResolver(templateResolver());
-        return engine;
+        return engine;    
     }
 
     @Bean
